@@ -9,14 +9,6 @@ RSpec.shared_examples 'URI' do |uri|
     expect(uri.parse('http://example.com:9876').port).to eq 9876
   end
   
-  it 'defaults the port for an http URI to 80' do
-    expect(uri.parse('http://example.com/').port).to eq 80
-  end
-
-  it 'defaults the port for an https URI to 443' do
-    expect(uri.parse('https://example.com/').port).to eq 443
-  end
-
   it 'parses the scheme' do
     expect(uri.parse('https://a.com/').scheme).to eq 'https'
   end
